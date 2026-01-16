@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saling Jaga | Lost & Found Lokal</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>🤝 Saling Jaga</h1>
+            <p>Platform peduli sesama untuk mengembalikan barang hilang di sekitar kita.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-grid">
+            <!-- Sidebar: Form Posting -->
+            <aside class="sidebar">
+                <section class="card">
+                    <h2>Buat Postingan</h2>
+                    <p class="subtitle">Bantu sesama dengan memberikan info yang jelas.</p>
+                    <form id="itemForm" class="form">
+                        <div class="form-group">
+                            <label>Apa barangnya?</label>
+                            <input id="title" placeholder="Contoh: Dompet Kulit Cokelat" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Deskripsi & Ciri Khas</label>
+                            <textarea id="description" placeholder="Sebutkan ciri unik barang agar mudah dikenali..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Lokasi (Kampus/Kos/Masjid)</label>
+                            <input id="location" placeholder="Contoh: Parkiran Masjid Al-Ikhlas" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select id="status">
+                                <option value="hilang">Saya Kehilangan Barang</option>
+                                <option value="ditemukan">Saya Menemukan Barang</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Kontak (WA/IG)</label>
+                            <input id="contact" placeholder="Contoh: WA 08123456xxx" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Foto Barang (Opsional)</label>
+                            <div class="upload-area" id="dropZone">
+                                <input type="file" id="imageInput" accept="image/*" hidden />
+                                <div id="imagePreview" class="image-preview">
+                                    <p>Klik atau Seret Foto ke Sini</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Siarkan Informasi</button>
+                    </form>
+                </section>
+            </aside>
+
+            <!-- Main Content: Filter & List -->
+            <section class="content">
+                <div class="filter-card card">
+                    <div class="filter-controls">
+                        <select id="filterStatus">
+                            <option value="">Semua Status</option>
+                            <option value="hilang">Barang Hilang</option>
+                            <option value="ditemukan">Barang Ditemukan</option>
+                        </select>
+                        <input id="filterLocation" placeholder="Cari berdasarkan lokasi..." />
+                        <button onclick="loadItems()" class="btn-secondary">Cari</button>
+                    </div>
+                </div>
+
+                <div class="grid" id="list">
+                    <!-- Item akan muncul di sini secara dinamis -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 <strong>Saling Jaga</strong> - Dibuat dengan kepedulian</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
